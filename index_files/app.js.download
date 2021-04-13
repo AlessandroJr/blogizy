@@ -1,0 +1,568 @@
+var root = document.documentElement;
+root.className += ' js';
+
+function boxTop(idBox) {
+	var boxOffset = $(idBox).offset().top;
+	return boxOffset;
+}
+
+$(document).ready(function() {
+	/* URL BASE */
+	/* var appBase = $(location).attr('href');
+	console.log(appBase);
+	appBase = appBase.split('index.php')['0'];
+	console.log(appBase);
+	*/
+
+	//enviar formulario de contato
+	$("#enviarContato").click(function(e){
+		e.preventDefault();
+
+		$(".preloader").show();
+		$.post("php/envia_email.php", $("#formContato").serialize(),function(EnviarForm){
+		    var nome = $("#nomeC").val(),
+		        email = $("#emailC").val(),
+		        empresa = $("#empresaC").val(),
+		        fone = $("#telefoneC").val(),
+		        mensagem = $("#mensagemC").val();
+
+		    var rdStationJsonData = {
+		            token_rdstation: "96009702914837cbaf1279a0c82b3837",
+		            identificador: "contato-site-izy",
+		            nome: nome,
+		            email: email,
+		            telefone: fone,
+		            empresa: empresa,
+		            mensagem: mensagem
+		        },
+		        salvaDadosRdStation = function(dto) {
+		            $.post("https://www.rdstation.com.br/api/1.3/conversions", dto);
+	        };
+	        salvaDadosRdStation(rdStationJsonData);
+
+			complete:$("#retornoFormulario").html(EnviarForm);
+			$(".preloader").hide();
+		});
+	});
+
+	$(".rola-nota-fiscal").click(function(e) {
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: $("#queroComecar").offset().top
+		}, 1000);
+	});
+
+	$(".textoNFeEntrada").click(function(){
+		$(".textoNFeEntrada").hide('slow');
+		$(".textoNFeAberto").show("slow");
+	});
+
+	$(".textoNFeAberto").click(function(){
+		$(".textoNFeAberto").hide('slow');
+		$(".textoNFeEntrada").show("slow");
+	});
+
+	$("#logaContador").click(function(e){
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: $(".parceriaDireita").offset().top
+		}, 1000);
+	});
+
+	$('.telefone')  
+			.mask("(99) 9999-9999?9")
+			.on('focusout', function (event) {  
+			var target, phone, element;  
+			target = (event.currentTarget) ? event.currentTarget : event.srcElement;  
+			phone = target.value.replace(/\D/g, '');  
+			element = $(target);  
+			element.unmask();  
+			if(phone.length > 10) {  
+			element.mask("(99) 99999-999?9");  
+			} else {  
+			element.mask("(99) 9999-9999?9");  
+		} 
+	});
+
+	$(".navbar-toggle").click(function() { 
+		$("#navbar-collapse").css({'left': 0});
+		$(".bg-navbar").fadeIn("slow");
+	});
+
+	$(".bg-navbar").click(function(){
+		$("#navbar-collapse").removeAttr('style');
+		$(".bg-navbar").fadeOut("slow");
+	});
+
+	if ($('#bannerSuperior').length) {
+		$.getScript('js/plugins/jquery.cycle.js',function() {
+			$(function() {
+				$('#bannerSuperior').cycle({ fx: 'fade' });
+			});
+		});
+	}
+
+	if ($('#slideComecar').length) {
+		$.getScript('js/plugins/jquery.cycle.js',function() {
+			$(function() {
+				$('#slideComecar').cycle({ fx: 'fade' });
+			});
+		});
+	}
+
+	$(".caixaVideoHome button").click(function(){
+		$(this).hide();
+	});
+
+	$(".abreFuncionalidadeHome").click(function(){
+		var funcionalidade = $(this).attr("data-id");
+		$(".abreFuncionalidade").removeClass("abreFuncionalidadeAtiva");
+		$(this).addClass("abreFuncionalidadeAtiva");
+		$(".exibeFuncionalidades").fadeOut(function(){
+			$(".exibeFuncionalidades").load('php/abre-funcionalidade-home.php',{funcionalidade:funcionalidade},function(){
+				complete:$(".exibeFuncionalidades").fadeIn();
+				$('html, body').animate({
+					scrollTop: $(".funcionalidadesDireita").offset().top
+				}, 1000);
+			});
+		});
+	});
+
+	$(".abreFuncionalidadeDentro").click(function(){
+		var funcionalidade = $(this).attr("data-id");
+		$(".abreFuncionalidade").removeClass("abreFuncionalidadeAtiva");
+		$(this).addClass("abreFuncionalidadeAtiva");
+		$(".exibeFuncionalidades").fadeOut(function(){
+			$(".exibeFuncionalidades").load('php/abre-funcionalidade-dentro.php',{funcionalidade:funcionalidade},function(){
+				complete:$(".exibeFuncionalidades").fadeIn();
+				$('html, body').animate({
+					scrollTop: $(".funcionalidadesDireita").offset().top
+				}, 1000);
+			});
+		});
+	});
+
+	$(".abreFuncionalidadeLanding").click(function(){
+		var funcionalidade = $(this).attr("data-id");
+		$(".abreFuncionalidade").removeClass("abreFuncionalidadeAtiva");
+		$(this).addClass("abreFuncionalidadeAtiva");
+		$(".exibeFuncionalidades").fadeOut(function(){
+			$(".exibeFuncionalidades").load('php/abre-funcionalidade-landing.php',{funcionalidade:funcionalidade},function(){
+				complete:$(".exibeFuncionalidades").fadeIn();
+				$('html, body').animate({
+					scrollTop: $(".funcionalidadesDireita").offset().top
+				}, 1000);
+			});
+		});
+	});
+
+	if ($('#owl-carousel-historias').length) {
+	    var owl = $('#owl-carousel-historias');
+	    owl.owlCarousel({
+	        margin: 0,
+	        nav: true,
+	        loop: false,
+	        slideBy: 1,
+	        autoplay: false,
+	        responsive: {
+	            0: {
+	                items: 1
+	            }, 768: {
+	                items: 3
+	            }, 1230: {
+	                items: 4
+	            }
+	        }
+	    });
+	}
+
+	if ($('#owl-carousel-funcionalidades').length) {
+	    var owl = $('#owl-carousel-funcionalidades');
+	    owl.owlCarousel({
+	        margin: 0,
+	        nav: true,
+	        loop: true,
+	        slideBy: 5,
+	        items: 5,
+	        autoplay: false,
+	        responsive: {
+	            0: {
+	                items: 2
+	            },
+	            400: {
+	                items: 3
+	            },
+	            700: {
+	                items: 5
+	            }
+	        }
+	    });
+	}
+
+	if ($('#owl-depoimentos-landing').length) {
+	    var owl = $('#owl-depoimentos-landing');
+	    owl.owlCarousel({
+	        margin: 0,
+	        nav: true,
+	        loop: true,
+	        slideBy: 1,
+	        items: 1
+	    });
+	}
+
+	if ($('#owl-clientes-landing').length) {
+	    var owl = $('#owl-clientes-landing');
+	    owl.owlCarousel({
+	        margin: 0,
+	        nav: false,
+	        loop: true,
+	        slideBy: 5,
+	        items: 5,
+	        autoplay: false,
+	        responsive: {
+	            0: {
+	                items: 2
+	            },
+	            400: {
+	                items: 4
+	            },
+	            960: {
+	                items: 6
+	            }
+	        }
+	    });
+	}
+
+	if ($('#owl-entregar-landing').length) {
+	    var owl = $('#owl-entregar-landing');
+	    owl.owlCarousel({
+	        margin: 0,
+	        nav: true,
+	        loop: true,
+	        slideBy: 5,
+	        items: 5,
+	        autoplay: false,
+	        responsive: {
+	            0: {
+	                items: 2
+	            },
+	            740: {
+	                items: 3
+	            },
+	            960: {
+	                items: 4
+	            }
+	        }
+	    });
+	}
+
+	$(".navbar-landing a, .navbar-landing-page a.navbar-brand").click(function(e){
+	    e.preventDefault();
+	    var target = $(this).attr("href");
+	    $('html, body').animate({
+	        scrollTop: $(target).offset().top -50
+	    }, 1000);
+	});
+
+	$(".navbar-toggle-landing").click(function() { 
+		$(".navbar-landing").slideToggle('slow');
+		$(".bg-navbar").hide();
+	});
+
+	var largura = $(window).width();
+	if (largura < 767) {
+		$(".navbar-landing a").click(function() {  
+			$(".navbar-landing").slideUp('slow');
+		});
+	}
+
+	$(".botaoAtualizaUsuarios").on("click", function() {
+		var limite = $("#quantidade").val();
+		var minimo = $("#quantidade_minima").val();
+		var $button = $(this);
+		var oldValue = $button.parent().find("input").val();
+
+		if ($button.text() == "+") {
+			if (oldValue < limite) {
+				var newVal = parseFloat(oldValue) + 1;
+			} else {
+				newVal = limite;
+			}
+		} else {
+			if (oldValue > minimo) {
+				var newVal = parseFloat(oldValue) - 1;
+			} else {
+				newVal = minimo;
+			}
+		}
+
+		var plano = $(this).attr("data-plano");
+		var novoPlano = plano+newVal;
+
+		$button.parent().find("input").val(newVal);
+
+		if (plano == '.izy') {
+			$(".botaoPlanoIzy").attr("href", "experimente&plano=1&contrato=1&usuarios="+newVal);
+			$(".atualizaPrecoIzy").removeClass("precoAtivo");
+		} else {
+			$(".botaoPlanoIzyVendas").attr("href", "experimente&plano=4&contrato=1&usuarios="+newVal);
+			$(".atualizaPrecoVendas").removeClass("precoAtivo");
+		}
+
+		$(novoPlano).addClass("precoAtivo");
+	});
+
+	$(".abrePlanos").click(function(){
+		$(this).hide();
+		var plano = $(this).attr("data-plano");
+		$(".ocultaPlanos"+plano).slideDown("slow");
+	});
+
+	$(".abre-contato").click(function(){
+		$("#form-telefone").fadeIn('slow');
+	});
+
+	$(".abre-demonstracao").click(function(){
+		$("#form-demonstracao").fadeIn('slow');
+	});
+
+	$(".fechar-form-popup").click(function(){
+		$(".bg-form-popup").fadeOut('slow');
+	});
+
+	var $target = $('.anime'),
+	animationClass = 'animacaoAtiva',
+	windowHeight = $(window).height(),
+	offset = windowHeight;
+
+	function animeScroll() {
+		var documentTop = $(document).scrollTop();
+		$target.each(function() {
+			if (documentTop > boxTop(this) - offset) {
+				$(this).addClass(animationClass);
+			}
+		});
+	}
+	animeScroll();
+
+	$(document).scroll(function() {
+		animeScroll();
+	});
+
+    $("#segmentos").change(function(event) {
+        var segmento = $(this).val();
+        if (segmento == "Artefatos") {
+        	var plano = 8;
+        } else if (segmento == "Esquadrias") {
+        	var plano = 11;
+        } else if (segmento == "Vidraçaria") {
+        	var plano = 11;
+        } else if (segmento == "Madeireira") {
+        	var plano = 12;
+        } else if (segmento == "Marmoraria") {
+        	var plano = 5;
+        } else if (segmento == "Móveis Planejados") {
+        	var plano = 10;
+        } else if (segmento == "Obras") {
+        	var plano = 9;
+        } else if (segmento == "Vistoria Veicular (ECV)") {
+        	var plano = 6;
+        } else {
+        	var plano = 1;
+        }
+        $("#CodigoPlanoIZY").val(plano);
+    });
+
+	$('#formContato').submit(function(){
+		return valida_form( this );
+	});
+
+	$('#formTelefone').submit(function(){
+		return valida_form2( this );
+	});
+
+	$("#formDemonstracao").submit(function(){
+		return valida_form3( this );
+	});
+});
+
+$(window).on("load", function (e){
+	$(".loaderSite").fadeOut("slow");
+});
+
+$(function() {
+	$('#play').click(function(){
+	  autoPlayVideo('V1ZGQeQmKMA','720','405');
+	});
+});
+
+function autoPlayVideo(vcode, width, height){
+  "use strict";
+  $("#videoContainer").html('<iframe width="'+width+'" height="'+height+'" src="https://www.youtube.com/embed/'+vcode+'?autoplay=1&loop=0&rel=0&showinfo=0&wmode=transparent" frameborder="0" allowfullscreen wmode="Opaque"></iframe>');
+}
+
+// $(function() {
+//     var iframe = $('#player1')[0];
+//     var player = $f(iframe);
+
+//     // When the player is ready, add listeners for pause, finish, and playProgress
+//     player.addEvent('ready', function() {});
+
+//     // Call the API when a button is pressed
+//     $('button').bind('click', function() {
+//         player.api($(this).text().toLowerCase());
+//     });
+// });
+
+function valida_form(form) {
+    var req = 0;
+    var emailfilter = /^[a-z0-9]+([_.-][a-z0-9]+)*@[a-z0-9]+([_.-][a-z0-9]+)*[.]+[a-z0-9]{2,4}$/i;
+    $( form ).find('.inputC').each(function(){
+		if($("#nomeC").val()== "" ){
+			$('#nomeC').css({'border-color': '#f00'});
+			$('#nomeC').click(function() {
+				$('#nomeC').removeAttr('style');	
+			});
+			$('#nomeC').focus(function(){
+				$('#nomeC').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if( !emailfilter.test( $("#emailC").val() ) ) {
+			$('#emailC').css({'border-color': '#f00'});
+			$('#emailC').click(function() {
+				$('#emailC').removeAttr('style');	
+			});
+			$('#emailC').focus(function(){
+				$('#emailC').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if($("#telefoneC").val()== "" ){
+			$('#telefoneC').css({'border-color': '#f00'});
+			$('#telefoneC').click(function() {
+				$('#telefoneC').removeAttr('style');
+			});
+			$('#telefoneC').focus(function(){
+				$('#telefoneC').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if($("#empresaC").val()== "" ){
+			$('#empresaC').css({'border-color': '#f00'});
+			$('#empresaC').click(function() {
+				$('#empresaC').removeAttr('style');
+			});
+			$('#empresaC').focus(function(){
+				$('#empresaC').removeAttr('style');
+			});
+		    req += 1;
+		}
+    });     
+    return !req;	
+}
+
+function valida_form2(form) {
+    var req = 0;
+    var emailfilter = /^[a-z0-9]+([_.-][a-z0-9]+)*@[a-z0-9]+([_.-][a-z0-9]+)*[.]+[a-z0-9]{2,4}$/i;
+    $( form ).find('.inputC').each(function(){
+		if($("#nomeT").val()== "" ){
+			$('#nomeT').css({'border-color': '#f00'});
+			$('#nomeT').click(function() {
+				$('#nomeT').removeAttr('style');	
+			});
+			$('#nomeT').focus(function(){
+				$('#nomeT').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if( !emailfilter.test( $("#emailT").val() ) ) {
+			$('#emailT').css({'border-color': '#f00'});
+			$('#emailT').click(function() {
+				$('#emailT').removeAttr('style');	
+			});
+			$('#emailT').focus(function(){
+				$('#emailT').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if($("#telefoneT").val()== "" ){
+			$('#telefoneT').css({'border-color': '#f00'});
+			$('#telefoneT').click(function() {
+				$('#telefoneT').removeAttr('style');
+			});
+			$('#telefoneT').focus(function(){
+				$('#telefoneT').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if($("#empresaT").val()== "" ){
+			$('#empresaT').css({'border-color': '#f00'});
+			$('#empresaT').click(function() {
+				$('#empresaT').removeAttr('style');
+			});
+			$('#empresaT').focus(function(){
+				$('#empresaT').removeAttr('style');
+			});
+		    req += 1;
+		}
+    });     
+    return !req;	
+}
+
+function valida_form3(form) {
+    var req = 0;
+    var emailfilter = /^[a-z0-9]+([_.-][a-z0-9]+)*@[a-z0-9]+([_.-][a-z0-9]+)*[.]+[a-z0-9]{2,4}$/i;
+    $( form ).find('.inputC').each(function(){
+		if($("#nomeD").val()== "" ){
+			$('#nomeD').css({'border-color': '#f00'});
+			$('#nomeD').click(function() {
+				$('#nomeD').removeAttr('style');	
+			});
+			$('#nomeD').focus(function(){
+				$('#nomeD').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if( !emailfilter.test( $("#emailD").val() ) ) {
+			$('#emailD').css({'border-color': '#f00'});
+			$('#emailD').click(function() {
+				$('#emailD').removeAttr('style');	
+			});
+			$('#emailD').focus(function(){
+				$('#emailD').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if($("#telefoneD").val()== "" ){
+			$('#telefoneD').css({'border-color': '#f00'});
+			$('#telefoneD').click(function() {
+				$('#telefoneD').removeAttr('style');
+			});
+			$('#telefoneD').focus(function(){
+				$('#telefoneD').removeAttr('style');
+			});
+		    req += 1;
+		}
+
+		if($("#empresaD").val()== "" ){
+			$('#empresaD').css({'border-color': '#f00'});
+			$('#empresaD').click(function() {
+				$('#empresaD').removeAttr('style');
+			});
+			$('#empresaD').focus(function(){
+				$('#empresaD').removeAttr('style');
+			});
+		    req += 1;
+		}
+    });     
+    return !req;	
+}
