@@ -2233,17 +2233,42 @@
   <div class="espacoMenu"></div>
   <div class="limpa"></div>
   <section id="content">
+    <style>
+      #CrmEnterprise, #CrmPme, #contentCrmType, #menusTypes, #menusTypes div, #contentCrmType{
+        transition: all;
+        transition-duration: 0.5s;
+        transition-timing-function: ease;
+        -o-transition: all;
+        -o-transition-duration: 0.5s;
+        -o-transition-timing-function: ease;
+        -moz-transition: all;
+        -moz-transition-duration: 0.5s;
+        -moz-transition-timing-function: ease;
+        -webkit-transition: all;
+        -webkit-transition-duration: 0.5s;
+        -webkit-transition-timing-function: ease;
+      }
+
+      #itensCrm{
+        padding: 15px 15px
+      }
+      #itensCrm .span-space-itens{
+        padding-left: 15px;
+      }
+    </style>
     <div class="espacoPaginas"></div>
     <div id="conteudoPaginas" class="border-bottom">
       <section class="tamanhoTela">
         <div class="blogEsquerda anime animacaoEsquerda animacaoEsquerdaUm animacaoAtiva">
           <h1><strong>CRM</strong>: como a tecnologia ajuda manter o bom relacionamento com o cliente?</h1>
 
-          <p><i><span>"Scientia potentia est"</span></i>, também conhecido como <i>"scientia est potentia"</i>, É uma
+          <p style="text-align: justify;">
+            <img alt="" src="./index_files/conference.png" style="width: 250px; height: 250px; float: right; padding-left: 15px;">
+            <i><span>"Scientia potentia est"</span></i>, também conhecido como <i>"scientia est potentia"</i>, É uma
             expressão
             em latim cujo significado representa "conhecimento & poder". </p>
           <br>
-          <p><span>Essa frase pressupõe que, com a aquisição
+          <p style="text-align: justify;"><span>Essa frase pressupõe que, com a aquisição
               de conhecimento, o ser humano é capaz de aumentar o seu potencial, assim influenciando outros indivíduos
               e melhorando a sua reputação.</span></p>
           <br>
@@ -2263,360 +2288,306 @@
               precisa estar disposta a investir em tecnologias inovadoras como, por exemplo,
               um <b>sistema de CRM</b>. </span></p>
 
+  <br><br>
           <h2>CRM: o que é e como funciona?</h2>
 
-          <p><b>CRM</b>, sigla para <i>Customer Relationship Management</i>, nada
+          <p>
+            <img alt="" src="./index_files/folder.png" style="width: 250px; height: 250px; float: left; padding-right: 15px;">
+            <b>CRM</b>, sigla para <i>Customer Relationship Management</i>, nada
               mais é que o conjunto de práticas e estratégias de negócios focadas no 
               <a href="https://www.gestaoizy.com.br/7-dicas-importantes-para-se-relacionar-bem-com-os-seus-clientes">relacionamento com o cliente.</a></p>
-
+<br>
           <p><span>Assim sendo, uma ferramenta <b>CRM</b> é um <i>software</i>
               desenvolvido para automatizar funções de contato e permite o armazenamento de
               informações sobre as atividades e interações de um cliente com a empresa.</span></p>
-
+<br>
           <p>Quando usada corretamente, essa tecnologia é capaz de
               ajudar na elaboração de estratégias de marketing, direcionamento de vendas e
               suporte, por exemplo. O que contribui para a sua madeireira
               <a href="https://www.gestaoizy.com.br/gestao-de-madeira-saiba-como-reduzir-os-custos-da-sua-madeireira">reduzir custos</a>,
               <a href="https://www.gestaoizy.com.br/agilidade-no-atendimento-e-vendas-rapidas-agora-voce-pode">agilizar o atendimento</a>,
               otimizar a rentabilidade e até aumentar o grau de satisfação dos clientes.</p>
+<br>
+            <div style="font-size:20px;color:#fff;font-style: italic;background-color: #6f1fca;height: 24px;padding: 10px 15px;">
+              <span style="opacity: 0.5;padding: 0!important;">"</span>
+              <span id="logMsgCliente" style="font-weight: bold;"></span>
+              <span style="opacity: 0.5;">"</span>
 
-          <p><span>"<i>Mas como um<b> CRM</b> funciona</i>?", você deve estar se
-              perguntando. </span></p>
+            </div>
 
-          <p><span>Pois bem, de um jeito muito simples. Você recorre a um
-              sistema de <b>gestão de relacionamento com
-                cliente</b> para cadastrar informações atuais e potenciais de um indivíduo ou
+            <br>
+
+              <p style="text-align: justify;">
+                <img alt="" src="./index_files/clipboard.png" style="width: 250px; height: 250px; float: right; padding-left: 15px;">
+              </p>
+
+              <script>
+                var div = document.getElementById('logMsgCliente');
+                var texto = 'Mas como um CRM funciona???';
+
+                function escrever(str, el) {
+                  var char = str.split('').reverse();
+                  var typer = setInterval(function() {
+                    if (!char.length) return clearInterval(typer);
+                    var next = char.pop();
+                    el.innerHTML += next;
+                  }, 100);
+
+                  setTimeout(() => {
+                    div.innerHTML = '';
+                    callEscrever(texto, div)
+                  }, 7000);
+                }
+
+                function callEscrever(texto, div) {
+                  setTimeout(() => {
+                    escrever(texto, div);    
+                  }, 2000);
+                }
+
+                escrever(texto, div);
+
+                  
+              </script>
+<br>
+          <p style="text-align: justify;">
+            <span>Pois bem, de um jeito muito simples. Você recorre a um
+              sistema de <b>gestão de relacionamento com cliente</b> para cadastrar informações atuais e potenciais de um indivíduo ou
               empresa como nome, endereço, número de telefone, etc. Ele também registra
               atividades como histórico de compras/problemas/devoluções, visitas, ligações
               telefônicas e canais preferidos de atendimento, entre outros.</span></p>
-
+<br>
           <p><span>Assim que o cadastro e registro são feitos, a sua
               madeireira consegue integrar todos os dados no sistema e com isso manter as
               equipes melhor preparadas e atualizadas com as informações.</span></p>
-
+<br>
           <p><span>Os principais benefícios de um <b>sistema de CRM</b> são:</span></p>
 
-          <p>
-            &#9679;
-            <span>Conhecimento mais amplo
-              sobre os negócios (vendas antigas, valores gastos em compras e histórico de
-              problemas/devoluções);</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>Ganhos em produtividade;</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>Controle da carteira de
-              clientes;</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>Inteligência no
-              planejamento estratégico;</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>Visão mais realista e
-              precisa do </span><span><a
-                href="https://gestaoizy.com.br/-como-melhorar-o-desempenho-dos-vendedores-com-a-gestao-de-vendas"><span>desempenho dos vendedores</span></a></span><span
-              >;</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>Aumento das vendas;</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>Fortalecimento da marca;</span>
-          </p>
-
-          <p>
-            &#9679;
-            <span>
-              <a href="https://www.gestaoizy.com.br/funil-de-vendas-aproveitando-as-oportunidades-e-melhorando-os-resultados">Gerenciamento de oportunidades e funil de vendas</a>
-            </span>
-            <span> para o setor comercial.</span>
-          </p>
-
-          <h2><span>Tipos
-              de CRM</span></h2>
+          <div id="itensCrm">
+            <p>
+              &#9679;
+              <span class="span-space-itens">Conhecimento mais amplo
+                sobre os negócios (vendas antigas, valores gastos em compras e histórico de
+                problemas/devoluções);</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">Ganhos em produtividade;</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">Controle da carteira de
+                clientes;</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">Inteligência no
+                planejamento estratégico;</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">Visão mais realista e
+                precisa do </span><span><a
+                  href="https://gestaoizy.com.br/-como-melhorar-o-desempenho-dos-vendedores-com-a-gestao-de-vendas"><span>desempenho dos vendedores</span></a></span><span
+                >;</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">Aumento das vendas;</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">Fortalecimento da marca;</span>
+            </p>
+  
+            <p>
+              &#9679;
+              <span class="span-space-itens">
+                <a href="https://www.gestaoizy.com.br/funil-de-vendas-aproveitando-as-oportunidades-e-melhorando-os-resultados">Gerenciamento de oportunidades e funil de vendas</a>
+              </span>
+              <span> para o setor comercial.</span>
+            </p>
+          </div>
+<br>
+<br>
+          <h2><span>Tipos de CRM</span></h2>
 
           <p><span>CRM de Vendas, CRM de Marketing, CRM de Suporte, CRM
               Operacional, CRM Analítico, CRM Colaborativo e CRM Estratégico. Existe uma
               série de ferramentas no mercado e todas possuem nomenclaturas e funcionalidades
               distintas. </span></p>
-
+<br>
           <p><span>No entanto, pode-se dizer que, no final, todos esses
               modelos são divididos em dois tipos: um voltado para as grandes corporações
-              (Enterprise), e outro para atender as necessidades dos pequenos e médios
-              empreendedores (PME).</span></p>
-
+              <b>(Enterprise)</b>, e outro para atender as necessidades dos pequenos e médios
+              empreendedores <b>(PME)</b>.</span></p>
+<br>
           <p><span>Abaixo veja como cada uma das modalidades funciona: </span></p>
 
-          <h2><a name="_b2xaih6nli1y"></a>Enterprise </h2>
+          <script>
+            var enterprise = `<p>
+              <img alt="" src="./index_files/capital.png" style="width: 250px; height: 250px; float: left;">
 
-          <p><span>O<b> CRM </b>Enterprise é
-              um sistema de <b>gestão de relacionamento com cliente</b>
+              <span>O <b>CRM</b> Enterprise é um sistema de <b>gestão de relacionamento com cliente</b>
               que permite a personalização com base nas necessidades de negócio. Ou seja, a
               sua madeireira pode incluir ou excluir recursos dentro da plataforma conforme
-              achar necessário. </span><span style='font-size:12.0pt;line-height:
-115%'></span></p>
-
-          <p><span>Uma
-              vez que esse <b>sistema de CRM</b> oferece
+              achar necessário. </span></p>
+              <br>
+              <p><span>Uma vez que esse <b>sistema de CRM</b> oferece
               mais opções de customização, o seu preço acaba sendo mais elevado quando
               comparado às ferramentas mais compactas como um <b>CRM</b> para pequenas e médias empresas.</span><span
-             ></span></p>
-
-          <h2>PME</h2>
-
-          <p><span>As
+             ></span></p>`;
+            var pme = `
+            <img alt="" src="./index_files/earnings.png" style="width: 250px; height: 250px; float: right;">
+            <p style="text-align:right!important"><span>As
               ferramentas de <b>CRM</b> para PME são
               ideais para as madeireiras que buscam economia e agilidade nas operações.
               Diferente do Enterprise, que possui alto custo de aquisição, o investimento
               dessa modalidade é bem menor porque o sistema é mais simples e comporta menos
-              opções de personalização. </span><span></span></p>
-
-          <p><span>Isso quer dizer que a sua empresa vai deixar de ter funcionalidades e recursos
+              opções de personalização. </span></p>
+              <br>
+          <p style="text-align:right!important"><span>Isso quer dizer que a sua empresa vai deixar de ter funcionalidades e recursos
               interessantes? De forma alguma! A única diferençaa entre um modelo e outro é
               que, no <i>software</i> para PME, você fará
               uso de uma solução mais compacta e que oferece somente os recursos necessários.
-            </span><span></span></p>
+            </span></p>`;
 
-          <h2><a name="_4idgobekjssl"></a><span>Como
-              um sistema de CRM ajuda a manter um bom relacionamento com o cliente?</span></h2>
+            function setTypeEnterprise () {
+              $('#contentCrmType').css('opacity', 0);
+              $('#menusTypes div').css('padding','10px');
+              $('#menusTypes div').css('width','48%');
+              $('#menusTypes .meio').css('width','4%');
+              $('#menusTypes .type1').css('background-color','#5af7a8');
+              $('#menusTypes .type2').css('background-color','#ddd');
 
-          <p><span>Uma vez que você pode <span>gerenciar e analisar todas as interações com o cliente por
+              $('#contentCrmType').css('min-height', '250px');
+              setTimeout(() => {
+                document.getElementById('contentCrmType').innerHTML = enterprise;
+                $('#contentCrmType').css('opacity', 1);
+              }, 500);
+            }
+
+            function setTypePme () {
+              $('#contentCrmType').css('opacity', 0);
+              $('#menusTypes div').css('padding','10px');
+              $('#menusTypes div').css('width','48%');
+              $('#menusTypes .meio').css('width','4%');
+              $('#menusTypes .type2').css('background-color','#e871c7');
+              $('#menusTypes .type1').css('background-color','#ddd');
+
+              $('#contentCrmType').css('min-height', '250px');
+              setTimeout(() => {
+                document.getElementById('contentCrmType').innerHTML = pme;
+                $('#contentCrmType').css('opacity', 1);
+              }, 500);
+            }
+          </script>
+          <style>
+            #contentCrmType{
+              padding: 25px 15px;
+            }
+            #contentCrmType img{
+              margin: 15px 15px 40px 15px
+            }
+            #menusTypes{
+              width: 100%;
+              background-color: #fff;
+              display: flex;
+              cursor: pointer;
+            } #menusTypes div{
+              padding: 60px 0;
+              font-size: 100%;
+              text-align: center!important;
+              font-weight: bold!important;
+            }
+
+            #menusTypes .type1{
+              width: 50%;
+              background-color: #ddd;
+            }
+            #menusTypes .type1:hover{
+              background-color: #5af7a8;
+            }
+            #menusTypes h3{
+              margin:0!important;
+              color:#fff!important;
+              opacity: 0.6;
+            }
+            #menusTypes .meio{
+              width: 0%;
+              cursor: default;
+            }
+            #menusTypes .type2{
+              width: 50%;
+              background-color: #ddd;
+            }
+            #menusTypes .type2:hover{
+              background-color: #e871c7;
+            }
+          </style>
+          <div id="menusTypes" style="margin-top:40px">
+            <div class="type1" onclick="setTypeEnterprise()">
+              <h3 id="#CrmEnterprise"><b>Enterprise</b></h3>
+            </div>
+            <div class="meio"></div>
+            <div class="type2" onclick="setTypePme()">
+              <h3 id="#CrmPme"><b>PME</b></h3>
+            </div>
+          </div>
+          <div id="contentCrmType"></div>          
+<br><br>
+          <h2><span>Como um sistema de CRM ajuda a manter um bom relacionamento com o cliente?</span></h2>
+
+          <p>Uma vez que você pode gerenciar e analisar todas as interações com o cliente por
                 meio de uma ferramenta, a sua madeireira consegue antecipar desejos, otimizar a
                 rentabilidade, aumentar as vendas e fazer o controle de histórico de processos
-                mais rápido.</span></span></p>
-
-          <p><span>O acesso às
+                mais rápido.</p>
+<br>
+          <p>O acesso às
               informações permite uma visão mais ampla sobre os negócios e todo esse
               conhecimento pode servir de base para a empresa e equipe de atendimento
-              melhorar a interação com os compradores.</span></p>
-
-          <p><span>Isso quer dizer
+              melhorar a interação com os compradores.</p>
+<br>
+          <p><img alt="" src="./index_files/announcement.png" style="width: 250px; height: 250px; float: left; padding-right: 15px;">
+            Isso quer dizer
               que um <b>sistema de CRM</b> só serve para
-              cadastrar clientes e registrar suas interações junto com a empresa? Não! </span></p>
-
-          <p><span>A ferramenta ainda simplifica tarefas repetitivas e
+              cadastrar clientes e registrar suas interações junto com a empresa? Não! </p>
+<br>
+          <p>A ferramenta ainda simplifica tarefas repetitivas e
               burocráticas, o que garante mais tempo para o time da sua madeireira acompanhar
               o progresso dos compradores. Também conecta todos os setores por meio de
               dispositivos móveis, permitindo uma comunicação mais fluida e o surgimento de
-              insights mais rápidos entre o grupo.</span></p>
-
-          <p><span>Como a empresa estará trabalhando com uma ferramenta
-              de ponta e terá acesso apenas às </span>
+              insights mais rápidos entre o grupo.</p>
+<br>
+          <p>Como a empresa estará trabalhando com uma ferramenta
+              de ponta e terá acesso apenas às 
                 <a href="https://www.gestaoizy.com.br/qual-a-importancia-de-ter-um-cadastro-de-clientes-atualizado">informações atualizadas sobre os clientes</a>
                   
-                <span>, ficará mais fácil para as equipes elaborarem estratégias de
+                , ficará mais fácil para as equipes elaborarem estratégias de
               marketing e vendas de modo a satisfazer as necessidades de cada comprador.
-              Assim melhorando o relacionamento e a experiência deles com a sua marca.</span></p>
-
-
-          <p><span>Viu
-              só como fazer a <b>gestão de clientes</b>
-              pode ser fácil? Você não precisa mais perder tempo <span>analisando planilhas e agendas para organizar todas
-                as informações</span>. Você pode recorrer a um <b>sistema de CRM</b> para automatizar as funções,
+              Assim melhorando o relacionamento e a experiência deles com a sua marca.</p>
+<br>
+          <p style="text-align: justify;">
+            <img alt="" src="./index_files/team-leader.png" style="width: 250px; height: 250px; float: right; padding-left: 15px;">
+            Viu só como fazer a <b>gestão de clientes</b>
+              pode ser fácil? Você não precisa mais perder tempo analisando planilhas e agendas para organizar todas
+                as informações. Você pode recorrer a um <b>sistema de CRM</b> para automatizar as funções,
               controlar os dados e
-              acompanhar de perto o histórico <span>de processos de cada cliente.</span></span></p>
+              acompanhar de perto o histórico de processos de cada cliente.</p>
+<br>
+          <p style="text-align: justify;">Não sabe de que processos estamos
+              falando, nem porque eles são válidos para a sua madeireira? <a
+                href="https://www.gestaoizy.com.br/contato">Peça
+                  um agendamento de reunião</a> para saber mais
+              informações sobre o funcionamento de um CRM. </p>
 
-          <p><span>Não sabe de que processos estamos
-              falando, nem porque eles são válidos para a sua madeireira? </span><span><a
-                href="https://www.gestaoizy.com.br/contato"><span>Peça
-                  um agendamento de reunião</span></a></span><span> para saber mais
-              informações sobre o funcionamento de um CRM. </span></p>
-
           <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <hr>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-
-
-
-          <p>Nas últimas décadas o número de marmorarias cresceu e a <a
-              href="https://gestaoizy.com.br/por-que-as-marmorarias-estao-faturando-menos-e-trabalhando-mais"
-              target="_blank">competitividade no mercado aumentou</a>.<br>
-            <br>
-            Em meio a esse cenário, com várias empresas disputando o mesmo cliente, saber reduzir os custos com insumos
-            pode ser um diferencial importante para oferecer um preço mais atrativo.<br>
-            <br>
-            Porém, o que ocorre quando a empresa não têm <strong>controle de estoque</strong> ou não sabe como gerenciar
-            e fazer a apuração correta dos custos?&nbsp;<br>
-            <br>
-            A marmoraria não consegue aumentar as margens de projetos,<a
-              href="https://gestaoizy.com.br/saiba-como-funciona-a-formacao-de-preco-de-uma-marmoraria" target="_blank">
-              o preço dos produtos pode ser calculado errado</a>&nbsp;e, consequentemente, a empresa deixa de vender. Ou
-            seja, <a href="https://gestaoizy.com.br/por-que-as-marmorarias-estao-faturando-menos-e-trabalhando-mais"
-              target="_blank">pode ter prejuízos</a>.<br>
-            <br>
-            E quem quer isso? Ninguém!<br>
-            <br>
-            Veja, neste post, qual a importância de gerenciar melhor o consumo de seus insumos e como reduzir o custo de
-            produção e estoque da sua empresa. Também, como um <strong>sistema para marmoraria</strong> pode ajudar!<br>
-            <br>
-          </p>
-          <h2>
-            Custos com insumos</h2>
-          <br>
-          <img alt="" src="./index_files/Custos-com-insumos.png" style="width: 200px; height: 250px; float: left;">O
-          setor de produção das marmorarias compõem boa parte dos custos totais da empresa. Esses custos envolvem a
-          matéria-prima (chapas), a mão-de-obra e também os insumos de produção.<br>
-          <br>
-          Os insumos servem de apoio para produção e esses geralmente não são contabilizados projeto a projeto devido a
-          dificuldade de ratear os custos — uma vez que os insumos são consumidos por período e não de maneira unitária
-          por projeto.<br>
-          <br>
-          Os custos com insumos de uma marmoraria são divididos em seis categorias:<br>
-          <ul>
-            <li>
-              <strong>Lixas:</strong> lixa comum, lixa de acabamento, lixa velcro, discos de lixa, lixa seca para
-              acabamento, lixa comum para acabamento, lixa de velcro para acabamento, lixa de alto brilho para
-              polimento, lixa d´água e lixa importada;
-            </li>
-            <li>
-              <strong>Discos</strong>: disco de serra para corte, disco de Makita para corte, disco de desbaste, disco
-              diamantado, disco comum, disco curvo, disco cônico e disco de serra diamantado. Qual <strong>o melhor
-                disco de corte para a marmoraria</strong>? Vai depender da sua utilização ;
-            </li>
-            <li>
-              <strong>Serra:</strong> serra comum, serra de corte, serra Makita, serra diamantada e serra de copo;
-            </li>
-            <li>
-              <strong>Fresa</strong>: fresa comum, fresa diamantada e fresa para acabamento
-            </li>
-            <li>
-              <strong>Brocas</strong>: broca de furação, broca diamantada, broca convencional, broca de copo e broca de
-              desbaste.
-            </li>
-            <li>
-              <strong>Abrasivos</strong>: cera, liga gria, resina, abrasivo, coroa, massa plástica, prato convencional,
-              platô, esmeril, rebolo, impermeabilizantes e cola.
-            </li>
-          </ul>
-          <br>
-          <h2>
-            Riscos de não apurar os custos com insumos corretamente</h2>
-          <br>
-          <img alt="" src="./index_files/Riscos-de-nao-apurar-os-custos-com-insumos-corretamente.png"
-            style="width: 200px; height: 230px; float: left;">Os insumos representam uma parte significativa dos custos
-          de produção. Assim sendo, têm influencia sobre o preço final do produto.<br>
-          <br>
-          Porém, muitos marmoristas ainda não sabem ou não estão preparados para apurar os custos corretamente - <a
-            href="https://gestaoizy.com.br/voce-faz-parte-do-grupo-das-marmorarias-que-mais-se-destacam-sabe-como-entrar-neste-grupo"
-            target="_blank">perdendo posição de destaque no mercado</a>. Isso porque alguns não dão tanto valor e
-          importância para esse controle.<br>
-          <br>
-          A não apuração desses custos é um fator extremamente prejudicial para os negócios uma vez que a empresa fica
-          sem fazer a contabilização correta dos custos.<br>
-          <br>
-          Isso pode impedi-la de avaliar, com exatidão, como está o desempenho do setor de produção e qual é o melhor
-          insumo para cada tipo de matéria-prima. Por exemplo: <strong>o</strong> <strong>melhor disco de corte para
-            marmoraria</strong>.<br>
-          <br>
-          Se não realizar a apuração correta de todos os custos, a empresa pode acabar lidando com as seguintes
-          situações:<br>
-          <br>
-          <ul>
-            <li>
-              Incapacidade de reduzir os custos com insumos de produção;</li>
-            <li>
-              Não conseguir aumentar as margens de cada projeto devido a mais insumos gastos;</li>
-            <li>
-              A empresa não sabe identificar qual é o melhor insumos a ser aplicado em cada tipo de material;</li>
-            <li>
-              Não saber qual é o rendimento de cada operador e qual o desperdício que cada um gera;</li>
-            <li>
-              Não manter <strong>controle de estoque</strong>.</li>
-          </ul>
-          &nbsp;<br>
-          <h2>
-            Como reduzir os custos com insumos</h2>
-          <img alt="" src="./index_files/Como-reduzir-os-custos-com-insumos.png"
-            style="width: 200px; height: 194px; float: left;">Se a sua marmoraria está com dificuldade de gerenciar o
-          consumo de insumos e reduzir os custos de produção e estoque, veja algumas dicas que podem ajudar na apuração
-          correta desses materiais:<br>
-          &nbsp;<br>
-          <strong>#1. Identifique o tipo de insumo que deve ser utilizado</strong><br>
-          <br>
-          A primeira coisa a ser feita para reduzir os custos é identificar o tipo de insumo que vai ser utilizado em
-          cada situação, etapa de produção e matéria-prima.<br>
-          Ao fazer isso você consegue evitar erros durante a compra e até reduzir os gastos com insumos
-          desnecessários.<br>
-          <br>
-          <strong>#2. Treine a equipe de produção</strong><br>
-          Treinar os funcionários que trabalham na linha de produção também é uma dica importante para reduzir os
-          custos. Afinal, ao fazer o uso correto dos insumos, a sua empresa consegue minimizar ou até mesmo impedir
-          desperdícios.<br>
-          <br>
-          <strong>#3. Controle a entrada e saída dos insumos</strong><br>
-          Manter um <strong>controle de estoque</strong>, sobre a entrada e saída dos insumos, é fundamental.<br>
-          Fazer a apuração média de consumo diária, semanal, quinzenal e mensal, por exemplo, pode ajudar você a avaliar
-          com mais clareza quais são os gastos por período.<br>
-          Também verificar se a sua marmoraria está (ou não) fazendo o uso errado dos materiais.<br>
-          <br>
-          <strong>#4. Controle a entrada e saída das matérias-primas</strong><br>
-          Tão importante quanto controlar a entrada e saída dos insumos é ter controle sobre as matérias-primas. Deve-se
-          fazer a apuração média de consumo do mármore, granito e quartzo para saber se a equipe de produção está usando
-          as chapas com responsabilidade.<br>
-          <br>
-          <strong>#5. Verifique como está o consumo de insumos</strong><br>
-          Outra dica que pode ajudar na gestão e apuração dos custos é manter um controle de entrada e saída de insumos
-          por funcionários, por etapa de produção ou projeto.<br>
-          Ao direcionar os custos fica mais fácil para avaliar o desempenho de cada operador e quais são os custos de
-          cada projeto.<br>
-          <br>
-          <strong>#6. Avalie a qualidade dos insumos</strong><br>
-          Para garantir que o produto final agrade o cliente, é necessário fazer uma avaliação dos seus fornecedores
-          para certificar que os insumos são de qualidade.<br>
-          Essa avaliação é importante para assegurar a durabilidade do material bem como o seu rendimento. Assim,
-          evitando novas compras.<br>
-          <br>
-          <h2>
-            Como fazer o controle e a apuração dos custos mais rápido</h2>
-          <br>
-          <img alt="" src="./index_files/Como-fazer-o-controle-e-a-apuracao-dos-custos-mais-rapido.png"
-            style="width: 200px; height: 193px; float: left;">Os clientes estão cada vez mais exigentes e a
-          competitividade entre as marmorarias está mais acirrada. Sai na frente a empresa que consegue disponibilizar
-          produtos com qualidade, em menos tempo, a um preço mais justo e acessível.<br>
-          <br>
-          Se a sua marmoraria quer reduzir os custos com insumo e oferecer um preço mais interessante, você não pode
-          deixar de ter <strong>controle de estoque</strong> e nem perder tempo apurando todas as informações.<br>
-          <br>
-          É importante que a sua gestão e apuração dos custos seja realizado de maneira permanente, rápida e simples.
-          Isso para não atrapalhar o processo produtivo do seu negócio.<br>
-          <br>
-          Para conseguir mais agilidade nesse processo, a sua marmoraria pode apostar em boas técnicas de gestão de
-          insumos ou então <a href="https://gestaoizy.com.br/a-importancia-da-tecnologia-na-gestao-de-marmorarias"
-            target="_blank">investir na tecnologia</a> para o processo fluir mais rápido.<br>
-          <br>
-          Um <strong>sistema para marmoraria</strong> como o <a href="http://gestaoizy.com.br/" target="_blank">iZY</a>,
-          por exemplo, permite que a sua empresa melhore o <strong>controle de estoque</strong>, otimize os trabalhos e
-          realize a gestão de forma <em>online</em>, prática e segura.<br>
-          <br>
-          O que está esperando para reduzir os custos com insumos da sua empresa? <a
-            href="https://gestaoizy.com.br/experimente" target="_blank">Clique agora mesmo e descubra como o sistema de
-            gestão iZy pode ajudar!&nbsp;&nbsp; </a><br>
           <br>
           <br>
           <br>
@@ -2624,14 +2595,8 @@
               src="./index_files/Rodape-padrao-artigos-iZY(2).png" style="width: 800px; height: 250px;"></a><br>
           <br>
           <p></p>
-          <span class="dataNoticia">07 de Abril de 2021</span>
+          <span class="dataNoticia">14 de Abril de 2021</span>
           <div class="limpaPostsDireita"></div>
-          <h3 class="tituloTags">Tags:</h3>
-          <a href="https://gestaoizy.com.br/tags/custos%20com%20insumos" class="tagIndividual">custos com insumos</a>
-          <a href="https://gestaoizy.com.br/tags/%20controle%20de%20estoque" class="tagIndividual">controle de
-            estoque</a>
-          <a href="https://gestaoizy.com.br/tags/%20sistema%20para%20marmoraria" class="tagIndividual">sistema para
-            marmoraria</a>
           <div class="limpa"></div>
           <div class="caixaCompartilhamentos">
             <div class="compartilharIndividual">
